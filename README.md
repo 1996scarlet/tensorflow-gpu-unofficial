@@ -1,5 +1,5 @@
 # tensorflow-gpu-unofficial
-Build tesorflow wheel with CUDA 10.0 and CUDNN 7.3.1
+Building tesorflow wheels with CUDA 10.0 and CUDNN 7.3.1
 
 ### 获取CUDA和CUDNN
 *  [link to CUDA](https://developer.nvidia.com/cuda-downloads)
@@ -12,3 +12,16 @@ Build tesorflow wheel with CUDA 10.0 and CUDNN 7.3.1
 4. `sudo apt-get install cuda`
 
 ### 安装CUDNN-dev
+* `sudo dpkg -i libcudnn7-dev_7.3.1.20-1+cuda10.0_amd64.deb`
+
+### GET keras and bazel
+* pip3 install keras
+* [bazel releases](https://github.com/bazelbuild/bazel/releases)
+* get `bazel-X.X.X-installer-linux-x86_64.sh`
+* chmod +x bazel-X.X.X-installer-linux-x86_64.sh
+* ./bazel-X.X.X-installer-linux-x86_64.sh --user
+* source /home/humanmotion/.bazel/bin/bazel-complete.bash
+
+### BUILD tensorflow
+* bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
+* bazel-bin/tensorflow/tools/pip_package/build_pip_package tensorflow_pkg
