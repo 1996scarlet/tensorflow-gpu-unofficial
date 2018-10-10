@@ -1,7 +1,7 @@
 # tensorflow-gpu-unofficial
 Building tesorflow wheels with CUDA 10.0 and CUDNN 7.3.1
 
-### 获取Ubuntu上的python3预编译wheel
+### 获取Ubuntu上的python3预编译wheel (for AVX2.0)
 * [TensorFlow 1.11.0 & CUDA 10.0 & CUDNN 7.3.1](https://github.com/1996scarlet/tensorflow-gpu-unofficial/blob/master/python-wheel/tensorflow-1.11.0-cp36-cp36m-linux_x86_64.whl)
 * [TensorFlow 1.10.1 & CUDA 9.2 & CUDNN 7.1.4](https://github.com/1996scarlet/tensorflow-gpu-unofficial/blob/master/python-wheel/tensorflow-1.10.1-cp36-cp36m-linux_x86_64.whl)
 
