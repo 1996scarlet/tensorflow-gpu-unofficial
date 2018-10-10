@@ -15,7 +15,8 @@ Building tesorflow wheels with CUDA 10.0 and CUDNN 7.3.1
 3. `sudo apt-get update`
 4. `sudo apt-get install cuda`
 
-### 安装CUDNN-dev
+### 安装CUDNN和CUDNN-dev
+* `sudo dpkg -i libcudnn7_7.3.1.20-1+cuda10.0_amd64.deb`
 * `sudo dpkg -i libcudnn7-dev_7.3.1.20-1+cuda10.0_amd64.deb`
 
 ### GET keras and bazel
