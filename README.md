@@ -27,6 +27,15 @@ Building tesorflow wheels with CUDA 10.0 and CUDNN 7.3.1
 * ./bazel-X.X.X-installer-linux-x86_64.sh --user
 * source /home/humanmotion/.bazel/bin/bazel-complete.bash
 
+### CONFIG
+* gedit configure.py
+* _DEFAULT_CUDA_VERSION = '10.0'
+* _DEFAULT_CUDNN_VERSION = '7.3.1'
+* _DEFAULT_NCCL_VERSION = '1.3'
+* _DEFAULT_CUDA_COMPUTE_CAPABILITIES = '3.5,7.0'
+* _DEFAULT_CUDA_PATH = '/usr/local/cuda-10.0'
+* ./configure
+
 ### BUILD tensorflow
 * bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
 * bazel-bin/tensorflow/tools/pip_package/build_pip_package tensorflow_pkg
