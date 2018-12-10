@@ -40,3 +40,10 @@ Building tesorflow wheels with CUDA 10.0 and CUDNN 7.3.1
 ### BUILD tensorflow
 * bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
 * bazel-bin/tensorflow/tools/pip_package/build_pip_package tensorflow_pkg
+
+### uninstall
+* ubuntu-drivers devices
+* sudo apt-get remove --purge '^nvidia-.*'
+* dpkg -l | grep nvidia
+* sudo dpkg -P libnvidia-compute-410
+* dpkg -l | grep ^rc | cut -d' ' -f3 | sudo xargs dpkg --purge
