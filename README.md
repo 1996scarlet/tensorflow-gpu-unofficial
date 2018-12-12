@@ -38,7 +38,7 @@ Building tesorflow wheels with CUDA 10.0 and CUDNN 7.3.1
 * ./configure
 
 ### BUILD tensorflow
-* bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
+* bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
 * bazel-bin/tensorflow/tools/pip_package/build_pip_package tensorflow_pkg
 
 ### uninstall
