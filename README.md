@@ -25,25 +25,34 @@ Building tesorflow wheels with CUDA 10.0 and CUDNN 7.3.1
 * `sudo dpkg -i libcudnn7-dev_7.3.1.20-1+cuda10.0_amd64.deb`
 
 ### GET keras and bazel
-* pip3 install keras
+* pip3 install keras wheel six numpy mock --user
 * [bazel releases](https://github.com/bazelbuild/bazel/releases)
-* get `bazel-X.X.X-installer-linux-x86_64.sh`
-* chmod +x bazel-*-installer-linux-x86_64.sh
-* ./bazel-*-installer-linux-x86_64.sh --user
-* source /home/humanmotion/.bazel/bin/bazel-complete.bash
+* wget https://github.com/bazelbuild/bazel/releases/download/0.17.2/bazel-0.17.2-installer-linux-x86_64.sh
+* chmod +x bazel-0.17.2-installer-linux-x86_64.sh
+* ./bazel-0.17.2-installer-linux-x86_64.sh --user
+* echo 'export PATH="$PATH:$HOME/bin"' >> ~/.basshrc
+* source ~/.bashrc
+* sudo ldconfig
 
 ### CONFIG
 * gedit configure.py
 * _DEFAULT_CUDA_VERSION = '10.0'
 * _DEFAULT_CUDNN_VERSION = '7.3.1'
 * _DEFAULT_NCCL_VERSION = '1.3'
-* _DEFAULT_CUDA_COMPUTE_CAPABILITIES = '3.5,7.0'
+* _DEFAULT_CUDA_COMPUTE_CAPABILITIES = '3.5,7.5'
 * _DEFAULT_CUDA_PATH = '/usr/local/cuda-10.0'
 * ./configure
 
 ### BUILD tensorflow
 * bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
 * bazel-bin/tensorflow/tools/pip_package/build_pip_package tensorflow_pkg
+* cd tensorflow_pkg
+* pip3 install tensorflow*.whl --user
+
+### Test tensorflow
+* python3
+* import tensorflow as tf
+* sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 
 ### uninstall
 * ubuntu-drivers devices
