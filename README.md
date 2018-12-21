@@ -55,6 +55,7 @@ Building tesorflow wheels with CUDA 10.0 and CUDNN 7.3.1
 * sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 
 ### uninstall
+* sudo find / -name "*opencv*" -exec rm -rfi {} \;
 * ubuntu-drivers devices
 * sudo apt-get remove --purge '^nvidia-.*'
 * dpkg -l | grep nvidia
