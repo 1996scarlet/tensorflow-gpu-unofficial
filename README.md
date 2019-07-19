@@ -1,5 +1,5 @@
 # tensorflow-gpu-unofficial
-Building tesorflow wheels with CUDA 10.0 and CUDNN 7.3.1
+Building tesorflow wheels with CUDA 10.1 and CUDNN 7.5.1
 
 ### 获取Ubuntu上的python3.6预编译wheel (for AVX2.0 GTX1080/1070/1060 Capability 6.1)
 * [TensorFlow 1.12.0 & CUDA 10.0 & CUDNN 7.3.1](https://github.com/1996scarlet/tensorflow-gpu-unofficial/blob/master/python-wheel/CUDA-10.0-GTX1080/tensorflow-1.12.0-cp36-cp36m-linux_x86_64.whl)
@@ -36,11 +36,11 @@ Building tesorflow wheels with CUDA 10.0 and CUDNN 7.3.1
 
 ### CONFIG
 * gedit configure.py
-* _DEFAULT_CUDA_VERSION = '10.0'
-* _DEFAULT_CUDNN_VERSION = '7.3.1'
+* _DEFAULT_CUDA_VERSION = '10.1'
+* _DEFAULT_CUDNN_VERSION = '7.5.1'
 * _DEFAULT_NCCL_VERSION = '1.3'
 * _DEFAULT_CUDA_COMPUTE_CAPABILITIES = '3.5,7.5'
-* _DEFAULT_CUDA_PATH = '/usr/local/cuda-10.0'
+* _DEFAULT_CUDA_PATH = '/usr/local/cuda-10.1'
 * ./configure
 
 ### BUILD tensorflow
